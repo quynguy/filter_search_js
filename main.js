@@ -95,6 +95,27 @@ function filterDrugs(value){
 };
 
 
+// search functionality
+document.getElementById("search").addEventListener("click", () => {
+    let searchInput = document.getElementById("search-input").value;
+    let elements = document.querySelectorAll(".product-name");
+    let cards = document.querySelectorAll(".card");
+    // console.log(searchInput);
+
+    // loop through all elements 
+    elements.forEach((element, index) => {
+        // check if text includes search value
+        if(element.innerText.includes(searchInput.toUpperCase())) {
+            // display matching card
+            cards[index].classList.remove("hide");
+        }
+        else {
+            // hide other elements 
+            cards[index].classList.add("hide");
+        }
+    })
+});
+
 // display all drugs by default
 window.onload = () => {
     filterDrugs("all");

@@ -44,6 +44,8 @@ body {
     border-radius: 3em;
     background-color: transparent;
     cursor: pointer;
+    font-size: 12px;
+    
 }
 
 .active {

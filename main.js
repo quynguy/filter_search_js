@@ -34,7 +34,7 @@ let drugs = {
 for (let i of drugs.data) {
     //card
     let card = document.createElement("div");
-    card.classList.add("card", "i.dosageForm");
+    card.classList.add("card", i.dosageForm, "hide");
     // image container
     let imgContainer = document.createElement("div");
     imgContainer.classList.add("image-container");
@@ -59,5 +59,43 @@ for (let i of drugs.data) {
 
     card.appendChild(container);
     document.getElementById("products").appendChild(card);
-    
-}
+};
+
+function filterDrugs(value){
+    let buttons = document.querySelectorAll(".button-value");
+    buttons.forEach(button => {
+        if (value.toUpperCase() == button.innerText.toUpperCase()) {
+            button.classList.add("active");
+        }
+        else {
+            button.classList.remove("active");
+        }
+    });
+
+    // select all drug cards
+    let elements = document.querySelectorAll(".card");
+    // loop through all cards 
+    elements.forEach((element => {
+        // display all cards on "all" button click
+        if (value == "all") {
+            element.classList.remove("hide");
+        }
+        else {
+            // check if element contains drug category class
+            if(element.classList.contains(value)){
+                // display element based on category
+                element.classList.remove("hide");
+            }
+            else{
+                // hide other elements 
+                element.classList.add("hide");
+            }
+        }
+    }));
+};
+
+
+// display all drugs by default
+window.onload = () => {
+    filterDrugs("all");
+};

@@ -1,4 +1,4 @@
-let products = {
+let drugs = {
     data: [
         {
             productName: "Abilify ",
@@ -30,3 +30,18 @@ let products = {
         },
     ],
 };
+
+for (let i of drugs.data) {
+    let card = document.createElement("div");
+    card.classList.add("card","i.dosageForm");
+
+    let imgContainer = document.createElement("div");
+    imgContainer.classList.add("image-container");
+    
+    let image = document.createElement("img");
+    image.setAttribute("src", i.image);
+    imgContainer.appendChild(image);
+    card.appendChild(imgContainer);
+
+    document.getElementById("products").appendChild(card);
+}

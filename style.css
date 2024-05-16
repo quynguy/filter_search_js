@@ -9,3 +9,44 @@
 body {
     background-color: #f7f3e3;
 }
+
+.wrapper {
+    width: 95%;
+    margin: 0 auto;
+}
+
+#search-container {
+    margin: 1em 0;
+}
+
+#search-container input {
+    background-color: transparent;
+    width: 40%;
+    border-bottom: 2px solid #110f29;
+    padding: 1em 0.3em;
+}
+
+#search-container input:focus {
+    border-bottom-color: aquamarine;
+}
+
+#search-container button {
+    padding: 1em 2em;
+    margin-left: 1em;
+    background-color: #AF9164;
+    border-radius: 5px;
+    margin-top: 0.5em;
+}
+
+.button-value{
+    border: 2px solid #AF9164;
+    padding: 1em 2.2em;
+    border-radius: 3em;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.active {
+    background-color: #B3B6B7;
+    color: white;
+}

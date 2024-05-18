@@ -1,3 +1,48 @@
+// elements
+
+const nav = document.querySelector(".nav");
+const searchIcon = document.querySelector("#searchIcon");
+const navOpen = document.querySelector(".navOpen");
+const navClose = document.querySelector(".navClose");
+const searchBox = document.getElementById("search-container");
+
+// console.log("Elements selected:", { nav, searchIcon, navOpen, navClose });
+// console.log("Search box:", searchBox);
+
+
+// search icon click event 
+searchIcon.addEventListener("click", () => {
+    // console.log("Search icon clicked");
+    nav.classList.toggle("openSearch");
+    nav.classList.remove("openNav");
+    searchBox.classList.toggle("openSearch");
+    // console.log("Current nav classes:", nav.classList);
+    if (nav.classList.contains("openSearch")) {
+        // console.log("Switching to close icon");
+        return searchIcon.classList.replace("uil-search", "uil-times");
+    }
+    // console.log("Switching to search icon");
+    searchIcon.classList.replace("uil-times", "uil-search");
+});
+
+// menu open button click event
+navOpen.addEventListener("click", () => {
+    // console.log("Nav open button clicked");
+    nav.classList.add("openNav");
+    nav.classList.remove("openSearch");
+    searchIcon.classList.replace("uil-times", "uil-search");
+    // console.log("Current nav classes:", nav.classList);
+});
+
+// menu close button click event
+navClose.addEventListener("click", () => {
+    // console.log("Nav close button clicked");
+    nav.classList.remove("openNav");
+    // console.log("Current nav classes:", nav.classList);
+});
+
+
+
 let drugs = {
     data: [
         {
@@ -120,3 +165,7 @@ document.getElementById("search").addEventListener("click", () => {
 window.onload = () => {
     filterDrugs("all");
 };
+
+
+
+

@@ -6,28 +6,50 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="description" content="" />
   <link rel="stylesheet" href="style.css">
+  <!-- google material ui icon -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+
 </head>
+
 <body>
-  <h1>Welcome to Q's Pharmaceuticals</h1>
-    <div class="wrapper">
-        <div id="search-container">
+    <nav class="nav">
+      <i class="uil uil-bars navOpen"></i>
+      <a href="#" class="logo"> <span class="material-symbols-outlined">
+        local_pharmacy</span> </a>
+
+      <ul class="nav-links">
+        <span class="material-symbols-outlined uil uil-times navClose"> search </span>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Products</a></li>
+        <li><a href="#">Cart</a></li>
+        <li><a href="#">Contact Support</a></li>
+      </ul>
+
+      <span class="material-symbols-outlined uil uil-search search-icon" id="searchIcon"> search </span>
+        <div id="search-container" class="search-box">
+          <i class="uil uil-search search-icon"></i>
             <input type="search" id="search-input" placeholder="Search Drugs ..."/>
             <button id="search">Search</button>
         </div>
-        <div id="buttons">
-            <button class="button-value" onclick="filterDrugs('all')">All</button>
-            <button class="button-value" onclick="filterDrugs('Tablets/Capsules')">Tablets/Capsules</button>
-            <button class="button-value" onclick="filterDrugs('Injectables/Injections')">Injectables/Injections</button>
-            <button class="button-value" onclick="filterDrugs('Syrups/Liquids')">Syrups/Liquids</button>
-            <button class="button-value" onclick="filterDrugs('Drops')">Drops</button>
-            <button class="button-value" onclick="filterDrugs('Suppositories')">Suppositories</button>
-            <button class="button-value" onclick="filterDrugs('DermalPatches')">Dermal Patches</button>
-            <button class="button-value" onclick="filterDrugs('Inhalers')">Inhalers</button>
-            <button class="button-value" onclick="filterDrugs('DietarySupplements')">Dietary Supplements</button>
-        </div>
-        <div id="products"></div>
+      </nav>
+      
+    
 
+    <div class="wrapper">
+      <div id="buttons">
+          <button class="button-value" onclick="filterDrugs('all')">All</button>
+          <button class="button-value" onclick="filterDrugs('Tablets/Capsules')">Tablets/Capsules</button>
+          <button class="button-value" onclick="filterDrugs('Injectables/Injections')">Injectables/Injections</button>
+          <button class="button-value" onclick="filterDrugs('Syrups/Liquids')">Syrups/Liquids</button>
+          <button class="button-value" onclick="filterDrugs('Drops')">Drops</button>
+          <button class="button-value" onclick="filterDrugs('Suppositories')">Suppositories</button>
+          <button class="button-value" onclick="filterDrugs('DermalPatches')">Dermal Patches</button>
+          <button class="button-value" onclick="filterDrugs('Inhalers')">Inhalers</button>
+      </div>
+      <div id="products"></div>
     </div>
+
 
 
   <script src="main.js"></script>
